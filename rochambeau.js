@@ -45,10 +45,35 @@ function playGame() {
     }
 }
 
-function displayScoreBoard(winsId, lossesId, tiesId) {
+function displayScoreBoard(winsId, lossesId, tiesId, MwinsId, MlossesId) {
     document.getElementById(winsId).innerHTML = score[0];
     document.getElementById(lossesId).innerHTML = score[2];
     document.getElementById(tiesId).innerHTML = score[1];
+    var match = [];
+    if (match.length < 2) {
+        if (playGame() == 0) {
+            match.push(0);
+            console.log("0 is pushed");
+        }
+        else if (playGame() == 2) {
+            match.push(2);
+            console.log("2 is pushed");
+        }
+    }
+    else if (match.length == 2) {
+        if (match <= 2) {
+            document.getElementById(MwinsId).innerHTML = "workingWin";
+            console.log("Match Won");
+            match = [];
+            console.log("Match array reset");
+        }
+        else if (match > 2) {
+            document.getElementById(MlossesId).innerHTML = "workingLoss";
+            console.log("Match Lost");
+            match = [];
+            console.log("Match array reset");
+        }
+    }
 }
 
 function updateScore(val) {
