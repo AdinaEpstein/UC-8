@@ -69,6 +69,7 @@ function updateMatch(val) {
 }
 
 function resetMatch() {
+    // Resets scoreboard after every match
     score[0] = 0;
     score[1] = 0;
     score[2] = 0;
@@ -124,45 +125,45 @@ function storePlayerChoice(choice) {
 function storeComputerChoice() {
     var autoWin = Math.floor(Math.random() * 2);
     // Decide if Computer should Auto-Win/Cheat
-    if(autoWin > 0){
+    if (autoWin > 0) {
         var chooseWin = Math.round(Math.random());
         if (playerChoice == 0) {
-            if(chooseWin = 1){
+            if (chooseWin = 1) {
                 computerChoice = 1;
             }
-            else{
+            else {
                 computerChoice = 4;
             }
         }
         else if (playerChoice == 1) {
-            if(chooseWin = 1){
+            if (chooseWin = 1) {
                 computerChoice = 2;
             }
-            else{
+            else {
                 computerChoice = 3;
             }
         }
         else if (playerChoice == 2) {
-            if(chooseWin = 1){
+            if (chooseWin = 1) {
                 computerChoice = 0;
             }
-            else{
+            else {
                 computerChoice = 4;
             }
         }
         else if (playerChoice == 4) {
-            if(chooseWin = 1){
+            if (chooseWin = 1) {
                 computerChoice = 1;
             }
-            else{
+            else {
                 computerChoice = 3;
             }
         }
         else if (playerChoice == 3) {
-            if(chooseWin = 1){
+            if (chooseWin = 1) {
                 computerChoice = 0;
             }
-            else{
+            else {
                 computerChoice = 2;
             }
         }
