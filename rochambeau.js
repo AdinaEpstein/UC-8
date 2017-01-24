@@ -1,6 +1,7 @@
 // This is the varaible that stores the score.
 // score[0] = wins, score[1] = ties, score[2] = losses
 var score = [0, 0, 0];
+var match = [0, 0, 0];
 // The variables store the current player's and computer's choices
 // 0 = Rock, 1 = Paper, 2 = Scissors, 3 = Lizard, 4 = Spock
 var playerChoice;
@@ -45,40 +46,33 @@ function playGame() {
     }
 }
 
-function displayScoreBoard(winsId, lossesId, tiesId, MwinsId, MlossesId) {
+function displayScoreBoard(winsId, lossesId, tiesId) {
     document.getElementById(winsId).innerHTML = score[0];
     document.getElementById(lossesId).innerHTML = score[2];
     document.getElementById(tiesId).innerHTML = score[1];
-    var match = [];
-    if (match.length < 2) {
-        if (playGame() == 0) {
-            match.push(0);
-            console.log("0 is pushed");
-        }
-        else if (playGame() == 2) {
-            match.push(2);
-            console.log("2 is pushed");
-        }
-    }
-    else if (match.length == 2) {
-        if (match <= 2) {
-            document.getElementById(MwinsId).innerHTML = "workingWin";
-            console.log("Match Won");
-            match = [];
-            console.log("Match array reset");
-        }
-        else if (match > 2) {
-            document.getElementById(MlossesId).innerHTML = "workingLoss";
-            console.log("Match Lost");
-            match = [];
-            console.log("Match array reset");
-        }
-    }
+}
+
+function displayMatchScoreBoard(mWinsId, mLossesId, mTies) {
+    document.getElementById(mWinsId).innerHTML = match[0];
+    document.getElementById(mLossesId).innerHTML = match[2];
+    document.getElementById(mTies).innerHTML = match[1];
 }
 
 function updateScore(val) {
     ++score[val];
     console.log("The score is now " + score);
+}
+
+function updateMatch(val) {
+    ++match[val];
+    console.log("The match score is now " + match);
+}
+
+function resetMatch() {
+    score[0] = 0;
+    score[1] = 0;
+    score[2] = 0;
+    console.log("scoreboard reset, new match");
 }
 
 function displayGameResult(resultId) {
@@ -94,18 +88,30 @@ function displayGameResult(resultId) {
         updateScore(0);
         document.getElementById(resultId).innerHTML = message + "YOU WIN!";
         document.getElementById(resultId).className = "alert alert-success";
+        if (score[0] == 2) {
+            updateMatch(0);
+            resetMatch();
+        }
     }
     else if (result == -1) {
         updateScore(2);
         // Display that it was a loss
         document.getElementById(resultId).innerHTML = message + "YOU LOOSE! ";
         document.getElementById(resultId).className = "alert alert-danger";
+        if (score[2] == 2) {
+            updateMatch(2);
+            resetMatch();
+        }
     }
     else {
         // Display that it was a tie
         updateScore(1);
         document.getElementById(resultId).innerHTML = message + "A tie. ";
         document.getElementById(resultId).className = "alert alert-info";
+        if (score[1] == 2) {
+            updateMatch(1);
+            resetMatch();
+        }
     }
 }
 
