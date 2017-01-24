@@ -1,6 +1,5 @@
 body {
-    background-color: whitesmoke;
-
+    background-image: url('wallpaper.jpg');
 }
 
 #banner {
@@ -31,3 +30,129 @@ body {
     color:grey;
 }
 
+.right {
+    text-align: right;
+}
+
+h1 {
+    text-align:center;
+}
+
+#background {
+    height: 100%;
+    background-image: url('casino.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
+}
+
+.customBtn {
+    width: 200px !important;
+    height: 80px !important;
+}
+
+.customBtn2 {
+    width: 200px !important;
+    height: 50px !important;
+    font-size: 20px;
+    padding: 7px 12px;
+    line-height: 18px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    border-radius: 4px;
+}
+
+.my-custom-container{
+    align-content: center;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.btn-size {
+    font-size: 20px;
+    padding: 7px 12px;
+    line-height: 18px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    border-radius: 4px;
+}
+
+.spacer {
+    height: 400px;
+}
+
+.title {
+    height: 125%;
+    background-image: url('logo.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 25%;
+}
+
+.subtitle {
+    height: 75%;
+    background-image: url('logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+}
+
+h1 {
+    font-family: serif;
+    height: 600%;
+    font-size: 180px;
+}
+
+.instruction {
+    font-family: serif;
+    font-size: 30px;
+    color: darkorange;
+}
+
+.table {
+    font-family: serif;
+    font-size: 20px;
+    color: darkorange;
+}
+
+#container {
+    	height: 200px;
+    	width: 800px;
+    	border: 1px solid #333;
+    	overflow: hidden;
+    	margin: 25px auto;
+    }
+
+    #box {
+    	background-image: url('scroll.png');
+    	height: 100px;
+    	width: 1080px;
+    	margin: 10px -400px;
+    	-webkit-animation-name: move;
+    	-webkit-animation-duration: 4s;
+    	-webkit-animation-iteration-count: infinite;
+    	-webkit-animation-direction: right;
+    	-webkit-animation-timing-function: linear;
+    }
+
+    #box:hover {
+    	-webkit-animation-play-state: paused;
+    }
+
+    @-webkit-keyframes move {
+    	0% {
+    		margin-left: -400px;
+    	}
+    	100% {
+    		margin-left: 400px;
+    	}
+    }

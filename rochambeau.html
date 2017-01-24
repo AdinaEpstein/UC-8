@@ -13,19 +13,36 @@
 </head>
 
 <body>
-    <p/><p/>
-    <div class="container">
-        <h1>Rock, Paper, Scissors Game</h1>
-        <p>Let's Play Rock, Paper Scissors! Press your choice and then press PLAY!.</p>
+
+    <audio accesskey autoplay loop>
+      <source src="casino.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Create a Background -->
+    <div id="background">
+    <div id="box"></div>
+
+    <div class="container my-custom-container">
+        <div class="title">
+            <table class="table">
+            <tr>
+                <td><img src="bannerOne.png" alt="disable adblock" height="450" width="300"></td><td class="right"><img src="bannerTwo.png" alt="disable adblock" height="450" width="300"></td>
+            </tr>
+            <tr>
+                <td><img src="bannerThree.png" alt="disable adblock" height="450" width="550"></td><td class="right"><img src="bannerfour.png" alt="disable adblock" height="450" width="550"></td>
+            </tr>
+            </table>
+        </div>
+        <p class="instruction">Let's Play R,P,S,L,S! Press your choice and then press PLAY to Win Big!</p>
                     <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default" onclick="storePlayerChoice(0)">Rock</button>
-                        <button type="button" class="btn btn-default" onclick="storePlayerChoice(1)">Paper</button>
-                        <button type="button" class="btn btn-default" onclick="storePlayerChoice(2)">Scissors</button>
-                        <button type="button" class="btn btn-default" onclick="storePlayerChoice(3)">Lizard</button>
-                        <button type="button" class="btn btn-default" onclick="storePlayerChoice(4)">Spock</button>
+                        <button type="button" class="btn btn-default btn-lg btn-size customBtn" onclick="storePlayerChoice(0)">Rock</button>
+                        <button type="button" class="btn btn-default btn-lg btn-size customBtn" onclick="storePlayerChoice(1)">Paper</button>
+                        <button type="button" class="btn btn-default btn-lg btn-size customBtn" onclick="storePlayerChoice(2)">Scissors</button>
+                        <button type="button" class="btn btn-default btn-lg btn-size customBtn" onclick="storePlayerChoice(3)">Lizard</button>
+                        <button type="button" class="btn btn-default btn-lg btn-size customBtn" onclick="storePlayerChoice(4)">Spock</button>
                     </div>
         <p></p>
-        <input type="button" onclick="displayGameResult('result'), displayScoreBoard('wins', 'losses', 'ties')" value="Play" class="btn btn-primary">
+        <input type="button" onclick="displayGameResult('result'), displayScoreBoard('wins', 'losses', 'ties')" value="Play" class="btn btn-primary customBtn2">
         <p></p>
         <div id="result"></div>
         <div id="scoreboard">
@@ -38,6 +55,8 @@
             </tr>
         </table>
         </div>
+        <img src="candy.jpg" alt="disable adblock" height="450" width="1000">
+    </div>
     </div>
 </body>
 </html>
